@@ -8,6 +8,9 @@
  */
 
 export * from './SimultaneousGesturesFlatList';
-export { useSimultaneousGesturesContext } from './SimultaneousGesturesContext';
+export {
+  useSimultaneousGesturesContext,
+  type SimultaneousGesturesContextValue,
+} from './SimultaneousGesturesContext';
 export * from './SimultaneousTouchable';
 export * from './SimultaneousText';

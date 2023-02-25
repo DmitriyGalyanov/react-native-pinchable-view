@@ -1,5 +1,14 @@
+// used for js-doc
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { SimultaneousGesturesContextValue } from '../SimultaneousGestures';
 import { observer } from 'mobx-react-lite';
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, {
+  FC,
+  PropsWithChildren,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import { LayoutChangeEvent, StyleSheet, View } from 'react-native';
 import {
   Gesture,
@@ -68,14 +77,14 @@ const useGetPinchedViewStyle = ({
     };
   });
 
-interface PinchableViewProps {}
+interface PinchableViewProps extends PropsWithChildren {}
 
 /**
  * Be Careful with Android Gestures Interception!
  *
  * All Parent PanGesture Handlers should be disabled before Pinch start!
  * (now it is achieved through
- * setting {@link PinchableViewProps.areParentGestureHandlersEnabled}
+ * setting {@link SimultaneousGesturesContextValue.areParentScrollsEnabled}
  * in {@link GestureType.onTouchesDown} and {@link GestureType.onTouchesUp})
  *
  * Tap Handlers are safer inside (in children)
